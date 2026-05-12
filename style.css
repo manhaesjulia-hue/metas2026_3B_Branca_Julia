@@ -1,52 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap&#39');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap&#39'); 
 
-:root {
-    --cor-de-fundo: #3757B8;
-    --grifar: #42558E;
-    --branco: #ffffff;
-    --botao-ativo: #1E4FE3;
-    --botao-inativo: #3F4863;
-    --texto-fundo: #2D3039;
-}
+ :root {
+    --cor-de-fundo: #4C0BE0;
+    --griar: #D800E0;
+    --branco: #ffffff; 
+    --botao-ativo: #8E00E0;
+    --botao-inativo: #0B10E6; 
+    --texto-fundo:  #E0006A; 
+ }
 
-body {
+ body{
     background-color: var(--cor-de-fundo);
-    color: var(--branco);
-    font-family:'Times New Roman', Times, serif;
+    color:var(--branco);
+    font-family: 'Times New Roman',Times, serif;
 }
 
-.conteudo-principal {
+.conteuo-principal {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   max-width: 1200px;
+   width: 100%;
+   margin: 0 auto;
+   }
+
+   .titulo-principal{ 
+   text-align: left;
+   width: 100%
+   font-size: 32px;
+}
+botao{
+    font-family: 'Times New Roman', Times, serif';
+    background-color: var(--botao-ativo);
+    color: var(--braanco);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
+     justify-content: center;
+     padding: 1em;
+     font-size: 18px;
+   align-items: center;
+   width: 100%;
+   border-bottom: 4px solid var (--botao-ativo);
+   border-left: 2px solid var (--botao-ativo);
+   border-right: 2px solid var (--botao-ativo);
+   border-top: none; 
+}              
 
-.titulo-principal{
-    text-align: left;
-    width: 100%;
-    font-size: 32px;
-}
-
-.botao{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: var(--botao-inativo);
-    color: var(--branco);
-    display: flex;
-    justify-content: center;
-    padding: 1em;
-    font-size: 18px;
-    align-items: center;
-    width: 100%;
-    border-bottom: 4px solid var(--botao-ativo);
-    border-left: 2px solid var(--botao-ativo);
-    border-right: 2px solid var(--botao-ativo);
-    border-top: none;
-}
 
 .botao:first-child{
-    border-radius: 40px 40px 0 0;
+     border-radius: 40px 40px 0 0;
 }
 
+.botoes{
+   display: block;
+}
+
+.botao
