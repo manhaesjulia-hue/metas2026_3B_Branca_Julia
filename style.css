@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap&#39'); 
 
  :root {
-    --cor-de-fundo: #4C0BE0;
-    --griar: #D800E0;
+    --cor-de-fundo: #bea5f8;
+    --grifar: #d800e073;
     --branco: #ffffff; 
     --botao-ativo: #8E00E0;
-    --botao-inativo: #0B10E6; 
-    --texto-fundo:  #E0006A; 
+    --botao-inativo: #a5a6f0; 
+    --texto-fundo:  #911850; 
  }
 
  body{
@@ -52,7 +52,69 @@ botao{
 }
 
 .botoes{
-   display: block;
+   display: flex;
 }
 
-.botao
+.botao.ativo{
+   background-color:var(--botao-ativo);
+   border-bottom:4px solid var (--grifar);
+
+} 
+.abas-textos{
+   background-color:var(--texto-fundo);
+   padding:40px;
+   border-radius:0 0 40px 40px;
+}
+.aba-conteudo.ativo{
+   display:block;
+
+}
+
+.aba-conteudo{
+   display:none;
+}
+.aba-conteudo-titulo-principal{
+   font-size:28px;
+   text-align:center;
+}
+
+.aba-conteudo-titulo-secundario{
+   text-align:center;
+   color:var(--grifar);
+   text-transform:uppercase;
+
+}
+
+.contador{
+   display:flex;
+   justify-content:center;
+   flex-wrap:wrap;
+}
+
+.contador-digito{
+   padding:0 16px;
+   text-align:center;
+   min-width:100px;
+
+}
+.contador-digito-numero{
+   font-size: 80px;
+   magin: 0;
+}
+.contador-digito-texto{
+   color:var(--grifar);
+   font-size:20px;
+   margin: 0;
+}
+
+@media screen and (min-width:768px){
+   .botao{
+      display:flex;
+   }
+.botao:first-child{
+   border-radius:40px 0 0 0;
+}
+.botao:last-child{
+   border-radius:0 40px 0 0;
+}
+}
