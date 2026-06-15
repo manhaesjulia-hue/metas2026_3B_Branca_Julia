@@ -14,7 +14,7 @@ for (let i = 0; i < botoes.length; i++){
     // Adiciona o estado ativo no botão e na aba clicada
     botoes[i].classList.remove("botao");
     botoes[i].classList.add("botao-ativo");
-    
+  
     textos[i].classList.remove("aba-conteudo");
     textos[i].classList.add("aba-conteudo-ativo");
   }  
