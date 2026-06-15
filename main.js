@@ -1,30 +1,35 @@
-const botoes = document.querySelectorAll(".botao");
-const textos = document.querySelectorAll(".aba-conteudo");
+const botoes = document.querySelectorAll("[class^='botao']");
+const textos = document.querySelectorAll("[class^='aba-conteudo']");
 
-for (let i = 0;i < botoes.length; i++){
+for (let i = 0; i < botoes.length; i++){
   botoes[i].onclick = function () {
-    for (let j= 0; j <botoes.length; j++){
-        botoes[j].classList.remove("ativo");
-        textos[j].classList.remove("ativo");  
+    for (let j = 0; j < botoes.length; j++){
+        // CORREÇÃO 2: Ajustado para usar os nomes exatos das classes do seu HTML
+        botoes[j].classList.remove("botao-ativo");
+        botoes[j].classList.add("botao");
+        
+        textos[j].classList.remove("aba-conteudo-ativo");  
+        textos[j].classList.add("aba-conteudo");  
     }
-    botoes[i].classList.add("ativo");
-    textos[i].classList.add("ativo");
+    // Adiciona o estado ativo no botão e na aba clicada
+    botoes[i].classList.remove("botao");
+    botoes[i].classList.add("botao-ativo");
+    
+    textos[i].classList.remove("aba-conteudo");
+    textos[i].classList.add("aba-conteudo-ativo");
   }  
 }
 
 const contadores = document.querySelectorAll(".contador");
-const tempoObjetivo1 = new Date("2026-7-4T00:00");
-const tempoObjetivo2 = new Date("2027-01-10T00:00");
-const tempoObjetivo3 = new Date("2026-12-18T00:00");
-const tempoObjetivo4 = new Date("2027-4-9T00:00");
+const tempoObjetivo1 = new Date("2026-07-04T00:00:00");
+const tempoObjetivo2 = new Date("2027-01-10T00:00:00");
+const tempoObjetivo3 = new Date("2026-12-18T00:00:00");
+const tempoObjetivo4 = new Date("2027-04-09T00:00:00");
 
+const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
 
-
-const tempos = [tempoObjetivo1,tempoObjetivo2,tempoObjetivo3,tempoObjetivo4];
-
-
-
-
+// Nota: A função calculaTempo foi mantida aqui caso você a use em outro lugar, 
+// mas o seu cronômetro principal usa a atualizaCronometro.
 function calculaTempo(tempoObjetivo) {
     let tempoAtual = new Date();
     let tempoFinal = tempoObjetivo - tempoAtual;
@@ -37,45 +42,4 @@ function calculaTempo(tempoObjetivo) {
     minutos %= 60;
     horas %= 24;
     if (tempoFinal > 0){
-        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
-    } else {
-        return "Prazo Finalizado";
-    }
-}
-
-function atualizaCronometro(){
-
-    for (let i = 0; i < tempos.length; i++){
-
-        let tempoAtual = new Date();
-        let tempoFinal = tempos[i] - tempoAtual;
-
-        let segundos = Math.floor(tempoFinal / 1000);
-        let minutos = Math.floor(segundos / 60);
-        let horas = Math.floor(minutos / 60);
-        let dias = Math.floor(horas / 24);
-
-        segundos %= 60;
-        minutos %= 60;
-        horas %= 24;
-
-        if (tempoFinal > 0){
-            document.getElementById(`dias${i}`).textContent = dias;
-            document.getElementById(`horas${i}`).textContent = horas;
-            document.getElementById(`min${i}`).textContent = minutos;
-            document.getElementById(`seg${i}`).textContent = segundos;
-        } else {
-            document.getElementById(`dias${i}`).textContent = "0";
-            document.getElementById(`horas${i}`).textContent = "0";
-            document.getElementById(`min${i}`).textContent = "0";
-            document.getElementById(`seg${i}`).textContent = "0";
-        }
-    }
-}
-
-function comecaCronometro(){
-    atualizaCronometro();
-    setInterval(atualizaCronometro,1000);
-}
-
-comecaCronometro();
+        return dias + " dias " + horas + " horas " + minutos +
