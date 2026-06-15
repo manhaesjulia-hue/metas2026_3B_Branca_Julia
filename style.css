@@ -12,10 +12,9 @@
  body{
     background-color: var(--cor-de-fundo);
     color: var(--branco);
-    font-family: 'Chakra Petch', 'Times New Roman', Times, serif; /* Atualizado para usar a fonte que você importou */
+    font-family: 'Chakra Petch', 'Times New Roman', Times, serif;
 }
 
-/* CORREÇÃO: Adicionado o "d" que faltava em conteudo */
 .conteudo-principal {
    display: flex;
    flex-direction: column;
@@ -26,7 +25,7 @@
    margin: 0 auto;
 }
 
-/* CORREÇÃO: Letra minúscula para alinhar com o HTML e adicionado o ";" */
+
 .titulo-principal{ 
    text-align: left;
    width: 100%;
